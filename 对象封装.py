@@ -69,8 +69,9 @@ class 英雄:
         print(' %s 被 %s 技能击中,受到 %d点的伤害和 %d 魔法损失'%(self.hname,技能.sname,技能.伤害生命,技能.伤害魔法))
         
         self.skill_list.append(技能.sname)
-        if 技能.sname=='火焰爆轰':
-            技能.伤害生命=技能.伤害生命*(randint(1,4))
+        
+       
+
         if 技能.伤害生命> self.realheal:
             print('%s over damage,target death'% 技能.sname)
             self.realtheal=0
