@@ -29,16 +29,6 @@ hero_rect=pygame.Rect(150,300,102,126)
 while 1:
     #定义内部的代码执行频率
     clock.tick(60)
-    #监听事件
-    for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            print('游戏退出')
-            #卸载模块
-            pygame.quit()
-            #终止程序
-            exit()
-
-   
     #修改飞机位置
     hero_rect.y-=1
     #判断飞机的位置
