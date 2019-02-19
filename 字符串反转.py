@@ -35,26 +35,20 @@ print(re)
 '''
 l=list(s)
 l.reverse()
-re=''.join(l)
-print(re)
+print(''.join(l))
 
-re=s[::-1]
-print(re)
-
-def func(s):
-    max_index=len(s)-1
-    result=''
-    for index,value in enumerate(s):
-        result+=s[max_index-index]
-    return result
-re=func(s)  
-print(re)
+b=s[::-1]
+print(b)
 
 def func(s):
-    if len(s)<1:
-        return s
-    else:
-        return s[-1]+func(s[:-1])
-re=func(s)
-print(re)
+    while 1:
+
+        if len(s)<=1:
+            return s
+            
+        else:
+            return s[-1]+func(s[:-1])
+result=func(s)
+print(result)
+
 

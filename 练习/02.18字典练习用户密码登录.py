@@ -13,6 +13,7 @@ while 1:
                 print('wrong passwd')
                 count-=1
                 print('your have %d chance to try' % count)
+        print('你的次数没有了')
         break
     else:
         print('please enter right username.')

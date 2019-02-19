@@ -1,4 +1,3 @@
-#coding=utf-8
 import pygame
 import time
 
@@ -16,10 +15,17 @@ screen.blit(bg,(0,0))
 pygame.display.update()
 
 #绘制英雄的飞机
+hero=pygame.image.load(r'C:\GitHub\2019.02代码\飞机大战\images\me1.png')
+screen.blit(hero,(200,500))
 
+pygame.display.update()
+#始终对象
+clock=pygame.time.Clock()
 
-
+# --------------------以上是初始化，下面是游戏循环----------------------------------------
+i=0
 while 1:
-    pass
+    clock.tick(60)
+    print(i)
 
 pygame.quit()
