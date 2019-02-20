@@ -1,5 +1,5 @@
 import pygame
-import time
+
 
 pygame.init()
 #创建游戏的窗口
