@@ -33,6 +33,8 @@ re=func(s)
 print(re)
 
 '''
+
+s='apple12345'
 l=list(s)
 l.reverse()
 print(''.join(l))
@@ -41,14 +43,9 @@ b=s[::-1]
 print(b)
 
 def func(s):
-    while 1:
-
-        if len(s)<=1:
-            return s
-            
-        else:
-            return s[-1]+func(s[:-1])
+    if len(s)<=1:
+        return s
+    else:
+        return s[-1]+func(s[:-1])
 result=func(s)
 print(result)
-
-
