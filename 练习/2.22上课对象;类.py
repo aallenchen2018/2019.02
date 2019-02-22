@@ -44,3 +44,69 @@ age=student2(30)
 age.print_name()
 age.ask2()
 
+##########类的方法###############
+class people:
+    country='china'
+    @classmethod
+    def getcountry(cls):
+        return cls.country
+p=people()
+print(p.getcountry())
+print(people.getcountry())
+
+class people2:
+    country='china'
+    @classmethod
+    def getcountry(cls):
+        return cls.country
+    @classmethod
+    def setcountry(cls,country):
+        cls.country=country
+p=people2()
+print(p.getcountry())
+p.setcountry('USA')
+print(p.getcountry())
+
+
+#######继承#################
+class dog:
+    def __init__(self,name,color='black'):
+        self.name=name
+        self.color=color
+    def run(self):
+        print('狗富贵,互相汪!!!')
+
+class keji(dog):
+    def set_name(self,name):
+        self.name=name
+    def eat(self):
+        print('i m eating!')
+
+科科=keji('科科')
+print('名字为 %s' % 科科.name)
+科科.eat()
+科科.set_name('饭饭')
+print('新狗名:%s' % 科科.name)
+科科.run()
+
+##########多继承#############
+class a:
+    def printa(self):
+        print('aaaaaa')
+class b:
+    def printb(self):
+        print('bbbbbbbb')
+class c(a,b):
+    def printc(self):
+        print('cccccccc')
+c1=c()
+c1.printa()
+c1.printb()
+c1.printc()
+
+########
+
+
+
+    
+
