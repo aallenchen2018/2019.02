@@ -12,22 +12,48 @@ class PlaneGame(object):
         self.__create_sprites()
  
     def __create_sprites(self):
-        pass
-
+        #创建背景精灵和精灵组
+        bg1=Background()
+        bg2=Background(True)
+        
+        self.back_group=pygame.sprite.Group(bg1,bg2)
     def start_game(self):
         print('游戏快开始...')
 
         #游戏循环
         while 1:
             #1.设置刷新频率
+            self.clock.tick(FRAME_PER_SEC)
             #2.事件监听
+            self.__event_handler()
             #3.碰撞检测
-            #4.更新/绘制精灵
+            self.__check__collide()
+            #4.更新/绘制精灵组
+            self.__update_sprites()
             #5.更新显示
-            pass
+            pygame.display.update()
+        
 
     def __event_handler(self):
+        #用这个方法来返回当前的操作信息
+        for event in pygame.event.get():
+            #判断是否退出游戏(类名+函数调用静态方法)
+            if event.type==pygame.QUIT:
+                PlaneGame.__game_over()
+
+    def __check__collide(self):
         pass
+    def __update_sprites(self):
+        self.back_group.update()
+        self.back_group.draw(self.screen)
+
+#静态方法
+    @staticmethod
+    def __game_over():
+        print('游戏结束...')
+
+        pygame.quit()
+        exit()
 
 if __name__ == "__main__":
     #创建游戏对象
